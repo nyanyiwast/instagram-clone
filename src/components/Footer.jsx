@@ -3,7 +3,7 @@ import logo from "../assets/4amtribe Logo - Original - 5000x5000.png"
 
 const Footer = () => {
      return(
-        <Navbar bg="light" variant="light" fixed="bottom">
+        <Navbar bg="light" variant="light" fixed="bottom" sticky="bottom">
         <Container>
           <Navbar.Brand>
             <img src={logo} alt="4amTribeLogo" className="logo" />
