@@ -1,13 +1,31 @@
+import React, { useState } from 'react';
 import profilePhoto from "../assets/profile.png"
+
 const Bio = () => {
 
+    const userInputData = (e) => {
+        e = e || window.event
+        e.preventDefault()
+        setUserDetails({
+            username: e.target.usernameValue.value,
+            about: e.target.aboutValue.value
+        })
+    }
+
+    const [editFormIsOpen, setEditFormIsOpen] = useState(true)
+
+    const [userDetails, setUserDetails] = useState({
+        username: "Sedrick Nyanyiwa",
+        about: "Co-Founder at 4amTribe - dev"
+    })
+
     const editForm = (
-         <form className="edit-bio-form">
-            <input type="text" id="" placeholder="Your name" />
-            <input type="text" id="" placeholder="About you" />
+         <form className="edit-bio-form" onSubmit={(e)=> userInputData(e)}>
+            <input type="text" id="" name="usernameValue" placeholder="Your name" />
+            <input type="text" id="" name="aboutValue" placeholder="About you" />
             <br/>
             <button type="button" className="cancel-button">Cancel</button>
-            <button type="button" className="save">Save</button>
+            <button type="submit" className="save">Save</button>
          </form>
     )
 
@@ -17,9 +35,9 @@ const Bio = () => {
                 <img src={profilePhoto} alt="profile" />
             </div>
             <div className="profile-info">
-                <p className="name">Sedrick Nyanyiwa</p>
-                <p className="about">Co-Founder at 4amTribe - dev</p>
-                <button>Edit</button>
+                <p className="name">{userDetails.username}</p>
+                <p className="about">{userDetails.about}</p>
+                <button onClick={()=> setEditFormIsOpen()}>Edit Profile</button>
                 {editForm}
             </div>
         </section>
