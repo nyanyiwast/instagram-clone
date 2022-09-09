@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import getPhotoUrl from 'get-photo-url';
 import defaultProfilePhoto from "../assets/profile.png"
+import { db } from './dexie';
 
 const Bio = () => {
     const [editFormIsOpen, setEditFormIsOpen] = useState(false)
@@ -13,15 +14,20 @@ const Bio = () => {
     const [profilePhoto, setProfilePhoto] = useState(defaultProfilePhoto)
 
 
-    const updateUserInputData = (e) => {
+    const updateUserInputData = async(e) => {
         e = e || window.event
         e.preventDefault()
-        setUserDetails({
+
+        const objectData = {
             username: `@${e.target.usernameValue.value}`,
             about: e.target.aboutValue.value
-        })
+        }
+
+        setUserDetails({objectData})
+        //store in local index db
+        await db.bio.put({objectData}, 'info')
         alert('SUCCESS! \n\n Profile Updated.')
-        
+        //close the edit form     
         setEditFormIsOpen(false)
     }
 
