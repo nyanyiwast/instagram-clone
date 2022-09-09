@@ -4518,6 +4518,11 @@ get-package-type@^0.1.0:
   resolved "https://registry.yarnpkg.com/get-package-type/-/get-package-type-0.1.0.tgz#8de2d803cff44df3bc6c456e6668b36c3926e11a"
   integrity sha512-pjzuKtY64GYfWizNAJ0fr9VqttZkNiK2iS430LtIHzjBEr6bX8Am2zm4sW4Ro5wjWW5cAlRL1qAMTcXbjNAO2Q==
 
+get-photo-url@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/get-photo-url/-/get-photo-url-1.0.3.tgz#397b664231bba26bdcfa570178bc1e79ff1fd074"
+  integrity sha512-cIuTayF28TodtsfIR6H/+MbRi/Kd3GTymVTOC22+1JloosdJBXcDkzrK6BZaqp7J4nTA6tebUaDrLa3xzoDedA==
+
 get-stream@^6.0.0:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/get-stream/-/get-stream-6.0.1.tgz#a262d8eef67aced57c2852ad6167526a43cbf7b7"
