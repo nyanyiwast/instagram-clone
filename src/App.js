@@ -1,5 +1,6 @@
 import { Nav, Bio, Gallery} from './components';
 import './App.css';
+// import Footer from './components/Footer';
 
 const App = ()=> {
   return (
@@ -9,6 +10,7 @@ const App = ()=> {
         <Bio />
         <Gallery />
       </div>
+      {/* <Footer /> */}
     </>
   );
 }
